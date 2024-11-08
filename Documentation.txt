@@ -1,0 +1,49 @@
+CoffeeMachineProject
+│
+├── src
+│   ├── Main.java                        // Entry point
+│   │
+│   ├── controller
+│   │   └── CoffeeMachineController.java // Controller to handle user actions
+│   │
+│   ├── model
+│   │   ├── CoffeeMachine.java           // Coffee machine logic (business model)
+│   │   └── CoffeeCup.java               // Representation of a single coffee type
+│   │
+│   └── view
+│       └── CoffeeMachineView.java       // User interface to interact with the user
+│
+└── coffee_machine_status.txt            // Save file for coffee machine state (auto-generated if not present)
+
+Project Summary
+    This project implements a coffee machine simulation using the MVC (Model-View-Controller)
+    design pattern. The application supports functionalities like buying coffee, refilling resources,
+    taking money from the machine, and managing admin credentials. Here’s a summary of each component:
+
+1. Model (Business Logic)
+    Classes: CoffeeMachine and CoffeeCup
+
+    Responsibilities:
+    CoffeeMachine handles coffee machine resources (water, milk, coffee beans, cups, and money)
+       and keeps track of administrator credentials. It can process coffee purchases, refill resources,
+       and store the machine’s status.
+
+    CoffeeCup represents a type of coffee with specific requirements (amounts of water, milk, coffee beans, and price).
+
+2. View (User Interface)
+    Class: CoffeeMachineView
+       Responsibilities: Displays messages and options to the user for
+       interacting with the coffee machine, such as available actions, coffee options, and login prompts.
+
+3. Controller
+    Class: CoffeeMachineController
+       Responsibilities: Handles user inputs, calls the model to
+       perform actions, and updates the view based on the model’s status.
+       Manages the main application loop for processing
+       user actions (buying coffee, logging in, refilling resources, etc.).
+
+4. Main
+    Class: Main
+       Responsibilities: Initializes the model, view, and controller,
+       and starts the main loop in the controller. Loads or creates a default coffee machine
+       state if no save file is found.
